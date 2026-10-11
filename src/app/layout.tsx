@@ -1,0 +1,47 @@
+import type { Metadata } from "next";
+import { Inter, Fraunces } from "next/font/google";
+import "./globals.css";
+import { Providers } from "@/components/providers";
+
+const inter = Inter({
+  variable: "--font-sans",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "Aesthetic SEO | Search Architecture & Registry",
+  description: "Clinical SEO Search Registry and Keyword CRM.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html
+      lang="en"
+      className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
+      <body
+        className="min-h-full flex flex-col font-sans bg-[#F4F1EC] text-[#0E0E0E]"
+        suppressHydrationWarning
+      >
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}
