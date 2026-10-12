@@ -429,6 +429,38 @@ export async function createKeyword(
   return keyword;
 }
 
+// ─── Dual-Sync to Sheet1 ─────────────────────────────────────────────
+async function syncToSheet1(keywordName: string, newVolume: number): Promise<void> {
+  try {
+    const sheets = getSheets();
+    const sheetId = getSheetId();
+    const res = await withRetry(() =>
+      sheets.spreadsheets.values.get({
+        spreadsheetId: sheetId,
+        range: 'Sheet1!A:A',
+      })
+    );
+    const rows = res.data.values || [];
+    const targetNorm = keywordName.trim().toLowerCase();
+    for (let i = 0; i < rows.length; i++) {
+      const val = (rows[i][0] || '').trim().toLowerCase();
+      if (val === targetNorm) {
+        await withRetry(() =>
+          sheets.spreadsheets.values.update({
+            spreadsheetId: sheetId,
+            range: `Sheet1!B${i + 1}`,
+            valueInputOption: 'RAW',
+            requestBody: { values: [[String(newVolume)]] },
+          })
+        );
+        break;
+      }
+    }
+  } catch (err) {
+    console.warn('Could not sync to Sheet1:', err);
+  }
+}
+
 // ─── Update Keyword ──────────────────────────────────────────────────
 export async function updateKeyword(
   id: string,
@@ -478,6 +510,11 @@ export async function updateKeyword(
       },
     })
   );
+
+  // Also sync volume directly to Sheet1 if updated
+  if (updates.volume !== undefined) {
+    await syncToSheet1(updatedKeyword.keyword, updatedKeyword.volume);
+  }
 
   // Log activity for each changed field
   const fieldNames = Object.keys(updates) as (keyof typeof updates)[];
