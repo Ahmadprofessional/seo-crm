@@ -19,9 +19,12 @@ export const metadata: Metadata = {
   title: "Aesthetic SEO | Search Architecture & Registry",
   description: "Clinical SEO Search Registry and Keyword CRM.",
   icons: {
-    icon: "/icon.svg",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico?v=2", sizes: "32x32" },
+    ],
     shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    apple: "/icon.png",
   },
 };
 
