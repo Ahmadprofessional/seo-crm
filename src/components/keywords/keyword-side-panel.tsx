@@ -403,7 +403,7 @@ export function KeywordSidePanel({
                     type="url"
                     value={formData.target_url}
                     onChange={(e) => setFormData({ ...formData, target_url: e.target.value })}
-                    placeholder="https://example.com/treatments/dermal-fillers"
+                    placeholder="https://yourhealthfirst.co.uk/..."
                     className="h-9 bg-white border-[#E5E0D8] rounded-none font-mono text-xs text-[#0E0E0E] focus-visible:ring-0 focus-visible:border-[#0F766E]"
                   />
                 </div>

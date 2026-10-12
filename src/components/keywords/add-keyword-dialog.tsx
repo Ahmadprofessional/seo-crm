@@ -218,7 +218,7 @@ export function AddKeywordDialog({
                   type="url"
                   value={targetUrl}
                   onChange={(e) => setTargetUrl(e.target.value)}
-                  placeholder="https://example.com/..."
+                  placeholder="https://yourhealthfirst.co.uk/..."
                   className="h-9 bg-white border-[#E5E0D8] rounded-none text-xs font-mono text-[#0E0E0E] focus-visible:ring-0 focus-visible:border-[#0F766E]"
                 />
               </div>
