@@ -25,11 +25,22 @@ function LoginForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFieldError('');
+
+    const cleanEmail = email.trim();
+    if (!cleanEmail || !password) {
+      setFieldError('Email and password are required.');
+      return;
+    }
+    if (cleanEmail.length > 128 || password.length > 128) {
+      setFieldError('Input exceeds maximum allowed length.');
+      return;
+    }
+
     setLoading(true);
 
     try {
       const result = await signIn('credentials', {
-        username: email,
+        username: cleanEmail,
         password,
         callbackUrl: callbackUrl || '/',
         redirect: false,
@@ -113,6 +124,7 @@ function LoginForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                maxLength={128}
                 autoComplete="email"
                 className="w-full h-11 px-3.5 bg-[#171717] border border-[#2E2E2E] text-sm text-[#F4F1EC] focus:outline-none focus:border-[#0F766E] transition-colors"
               />
@@ -132,6 +144,7 @@ function LoginForm() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                maxLength={128}
                 autoComplete="current-password"
                 className="w-full h-11 px-3.5 bg-[#171717] border border-[#2E2E2E] text-sm text-[#F4F1EC] focus:outline-none focus:border-[#0F766E] transition-colors"
               />
