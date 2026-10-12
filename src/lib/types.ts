@@ -96,6 +96,15 @@ export const SETTINGS_HEADERS = ['statuses', 'categories', 'users'] as const;
 
 // Default values
 export const DEFAULT_STATUSES = ['Research', 'Planned', 'Drafting', 'Review', 'Published'];
-export const DEFAULT_CATEGORIES = ['Aesthetic Clinic', 'Location', 'Dermatologist', 'Botox & Anti-wrinkle'];
+export const DEFAULT_CATEGORIES = [
+  'Aesthetic Clinic',
+  'Location',
+  'Dermatologist',
+  'Botox & Anti-wrinkle',
+  'Dermal & Lip Fillers',
+  'Filler Dissolving',
+  'Non-surgical Rhinoplasty',
+  'Laser Hair Removal',
+];
 export const PRIORITIES = ['Low', 'Medium', 'High'] as const;
 export type Priority = typeof PRIORITIES[number];
