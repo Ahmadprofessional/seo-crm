@@ -160,6 +160,16 @@ export const authOptions: NextAuthOptions = {
     maxAge: 24 * 60 * 60, // 24 hours
   },
   callbacks: {
+    async redirect({ url, baseUrl }) {
+      if (url.startsWith('/')) return `${baseUrl}${url}`;
+      try {
+        const parsed = new URL(url);
+        if (parsed.origin === baseUrl) return url;
+      } catch {
+        // fallback
+      }
+      return baseUrl;
+    },
     async jwt({ token, user }) {
       if (user) {
         token.name = user.name;

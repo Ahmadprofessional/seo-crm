@@ -39,10 +39,14 @@ function LoginForm() {
     setLoading(true);
 
     try {
+      const targetCallback = callbackUrl && callbackUrl.startsWith('/') && !callbackUrl.startsWith('//')
+        ? callbackUrl
+        : '/';
+
       const result = await signIn('credentials', {
         username: cleanEmail,
         password,
-        callbackUrl: callbackUrl || '/',
+        callbackUrl: targetCallback,
         redirect: false,
       });
 
@@ -54,8 +58,17 @@ function LoginForm() {
         );
         setLoading(false);
       } else {
-        const dest = result?.url || callbackUrl || '/';
-        window.location.href = dest;
+        // Enforce strictly relative path navigation so it never redirects to localhost
+        let destination = targetCallback;
+        if (result?.url) {
+          try {
+            const parsed = new URL(result.url, window.location.origin);
+            destination = parsed.pathname + parsed.search;
+          } catch {
+            destination = targetCallback;
+          }
+        }
+        window.location.href = destination || '/';
       }
     } catch {
       setFieldError('Connection interrupted. Please try again.');
@@ -66,8 +79,11 @@ function LoginForm() {
   const handleGoogleSignIn = async () => {
     setFieldError('');
     setGoogleLoading(true);
+    const targetCallback = callbackUrl && callbackUrl.startsWith('/') && !callbackUrl.startsWith('//')
+      ? callbackUrl
+      : '/';
     try {
-      await signIn('google', { callbackUrl });
+      await signIn('google', { callbackUrl: targetCallback });
     } catch {
       setFieldError('Google authentication failed. Please use email and password.');
       setGoogleLoading(false);
