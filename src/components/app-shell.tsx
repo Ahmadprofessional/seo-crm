@@ -34,7 +34,7 @@ export function AppShell({ children }: AppShellProps) {
                   Aesthetic SEO
                 </span>
                 <span className="text-[10px] tracking-[0.2em] uppercase text-[#736E66] block mt-2 font-mono">
-                  Registry & Index · Harley St.
+                  Keyword CRM · Harley St.
                 </span>
               </Link>
             </div>

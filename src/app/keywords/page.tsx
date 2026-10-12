@@ -33,10 +33,10 @@ function KeywordsContent() {
       <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-4 pb-6 border-b border-[#E5E0D8]">
         <div>
           <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#777] block mb-1">
-            Index &amp; Specifications
+            Clinic Keyword CRM
           </span>
           <h1 className="font-serif text-3xl sm:text-4xl text-[#0E0E0E] font-normal tracking-tight">
-            Search Registry
+            All Keywords
           </h1>
           <p className="text-xs sm:text-sm text-[#666] mt-1.5 font-light max-w-xl">
             Live search demand, content lifecycle stages, and metadata synchronized directly with Google Sheets.

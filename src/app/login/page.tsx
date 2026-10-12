@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Editorial Architecture Login Screen
+ * Aesthetic SEO Keyword CRM Login Screen
  * Ultra-fast, minimal, zero-fluff login screen.
  * Standard native cursor, clean paper palette (#F4F1EC), ink panel (#0E0E0E),
  * direct credentials and Google sign-in options. Zero fabricated data.
@@ -99,12 +99,12 @@ function LoginForm() {
             Aesthetic SEO
           </span>
           <span className="block text-[10px] font-mono uppercase tracking-[0.22em] text-[#6E6A64] mt-1">
-            Search Architecture & Registry · London
+            SEO & Keyword CRM · Harley Street
           </span>
         </div>
         <div className="text-right hidden sm:block">
           <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-[#6E6A64]">
-            Registry Portal
+            Clinic Staff Portal
           </span>
         </div>
       </header>
@@ -121,7 +121,7 @@ function LoginForm() {
               Sign in
             </h1>
             <p className="text-xs text-[#9C9890] mt-1.5">
-              Enter credentials to access the SEO keyword registry and content workflows.
+              Enter credentials to access the Keyword CRM and content workflows.
             </p>
           </div>
 
@@ -234,7 +234,7 @@ function LoginForm() {
 
       {/* Footer */}
       <footer className="w-full px-8 py-5 border-t border-[#E3DFD8] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-mono text-[#807C74]">
-        <span>© Aesthetic SEO Keyword Registry. Archival Record.</span>
+        <span>© Aesthetic SEO Keyword CRM · Harley Street</span>
         <span>Google Sheets Sync Active</span>
       </footer>
     </div>

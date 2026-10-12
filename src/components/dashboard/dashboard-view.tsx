@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Editorial Architecture Dashboard
+ * Aesthetic SEO Keyword CRM Dashboard
  * - Oversized count-up numerals in Fraunces serif
  * - Interactive 3D keyword skyline visualization with R3F
  * - Architectural hairline metric grid
@@ -87,7 +87,7 @@ export function DashboardView({
         <div>
           <div className="flex items-center gap-3 mb-2">
             <span className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#0F766E] font-medium">
-              Aesthetic Search Architecture · Harley St.
+              Aesthetic SEO & Keyword CRM · Harley St.
             </span>
             <span className="inline-flex items-center gap-1.5 px-2 py-0.5 text-[10px] font-mono uppercase tracking-[0.16em] text-[#0F766E] border border-[#0F766E]/30 bg-[#F0FDF4]/50">
               <span className="h-1.5 w-1.5 rounded-full bg-[#0F766E] animate-pulse" />
@@ -95,10 +95,10 @@ export function DashboardView({
             </span>
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl text-[#0E0E0E] font-normal tracking-[-0.02em]">
-            Overview & Registry
+            Overview & Keyword CRM
           </h1>
           <p className="text-xs sm:text-sm text-[#6E6A64] mt-1 max-w-xl">
-            Central repository tracking organic search positions, monthly demand volumes, and editorial landing page pipelines.
+            Central dashboard tracking organic search positions, monthly demand volumes, and clinic content pipelines.
           </p>
         </div>
 
@@ -114,7 +114,7 @@ export function DashboardView({
             href="/keywords"
             className="h-10 px-4 border border-[#D5CFC4] hover:border-[#0E0E0E] text-[#0E0E0E] text-xs font-mono uppercase tracking-[0.18em] inline-flex items-center transition-colors bg-[#FAF8F5]"
           >
-            Full Registry →
+            All Keywords →
           </Link>
         </div>
       </section>
@@ -312,7 +312,7 @@ export function DashboardView({
         </div>
       </section>
 
-      {/* 5. Top 10 Keywords Archival Index */}
+      {/* 5. Top 10 Keywords Priority Ranking */}
       <section className="border border-[#E3DFD8] bg-[#FAF8F5]">
         <div className="p-6 sm:p-7 border-b border-[#E3DFD8] flex items-center justify-between">
           <div>
@@ -327,7 +327,7 @@ export function DashboardView({
             href="/keywords"
             className="text-xs font-mono uppercase tracking-[0.14em] text-[#0E0E0E] hover:text-[#0F766E] transition-colors"
           >
-            View All {keywords.length} Records →
+            View All {keywords.length} Keywords →
           </Link>
         </div>
 
