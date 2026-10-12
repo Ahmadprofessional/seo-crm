@@ -159,7 +159,7 @@ export function AddKeywordDialog({
                   <SelectTrigger id="kw-priority" className="h-9 bg-white border-[#E5E0D8] rounded-none text-xs font-mono">
                     <SelectValue placeholder="Priority" />
                   </SelectTrigger>
-                  <SelectContent className="rounded-none border-[#E5E0D8] font-mono text-xs">
+                  <SelectContent className="bg-white rounded-none border-[#262626] font-mono text-xs shadow-2xl">
                     {PRIORITIES.map((p) => (
                       <SelectItem key={p} value={p}>
                         {p}
@@ -179,7 +179,7 @@ export function AddKeywordDialog({
                   <SelectTrigger id="kw-category" className="h-9 bg-white border-[#E5E0D8] rounded-none text-xs font-mono">
                     <SelectValue placeholder="Category" />
                   </SelectTrigger>
-                  <SelectContent className="rounded-none border-[#E5E0D8] font-mono text-xs">
+                  <SelectContent className="bg-white rounded-none border-[#262626] font-mono text-xs shadow-2xl">
                     {categories.map((c) => (
                       <SelectItem key={c} value={c}>
                         {c}
@@ -197,7 +197,7 @@ export function AddKeywordDialog({
                   <SelectTrigger id="kw-status" className="h-9 bg-white border-[#E5E0D8] rounded-none text-xs font-mono">
                     <SelectValue placeholder="Status" />
                   </SelectTrigger>
-                  <SelectContent className="rounded-none border-[#E5E0D8] font-mono text-xs">
+                  <SelectContent className="bg-white rounded-none border-[#262626] font-mono text-xs shadow-2xl">
                     {statuses.map((s) => (
                       <SelectItem key={s} value={s}>
                         {s}
@@ -232,7 +232,7 @@ export function AddKeywordDialog({
                     <SelectTrigger id="kw-assigned" className="h-9 bg-white border-[#E5E0D8] rounded-none text-xs font-mono">
                       <SelectValue placeholder="Unassigned" />
                     </SelectTrigger>
-                    <SelectContent className="rounded-none border-[#E5E0D8] text-xs">
+                    <SelectContent className="bg-white rounded-none border-[#262626] font-mono text-xs shadow-2xl">
                       <SelectItem value="">Unassigned</SelectItem>
                       {users.map((u) => (
                         <SelectItem key={u} value={u}>

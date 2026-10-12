@@ -1,6 +1,37 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-paper: var(--bg-paper);
+  --color-paper-light: var(--bg-paper-light);
+  --color-paper-subtle: var(--bg-paper-subtle);
+  --color-ink: var(--text-ink);
+  --color-text-muted: var(--text-muted);
+  --color-accent-teal: var(--accent-teal);
+  --color-border-hairline: var(--border-hairline);
+  --color-border-dark: var(--border-dark);
+}
+
 @layer base {
   :root {
     --bg-paper: #F4F1EC;
@@ -33,6 +64,23 @@
     --input: #E3DFD8;
     --ring: #0E0E0E;
     --radius: 0px;
+  }
+
+  /* Ensure solid opaque background for all popup/dropdown menus */
+  [data-slot="select-content"],
+  [data-slot="dropdown-menu-content"],
+  [data-slot="popover-content"],
+  [data-slot="dialog-content"] {
+    background-color: var(--popover, #FFFFFF);
+    color: var(--popover-foreground, #0E0E0E);
+  }
+
+  .dark [data-slot="select-content"],
+  .dark [data-slot="dropdown-menu-content"],
+  .dark [data-slot="popover-content"],
+  .dark [data-slot="dialog-content"] {
+    background-color: #141414;
+    color: #F4F1EC;
   }
 
   * {

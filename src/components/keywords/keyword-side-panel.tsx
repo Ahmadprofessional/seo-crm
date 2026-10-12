@@ -310,7 +310,7 @@ export function KeywordSidePanel({
                       <SelectTrigger className="h-9 bg-white border-[#E5E0D8] rounded-none text-xs font-mono">
                         <SelectValue />
                       </SelectTrigger>
-                      <SelectContent className="rounded-none border-[#E5E0D8] font-mono text-xs">
+                      <SelectContent className="bg-white rounded-none border-[#262626] font-mono text-xs shadow-2xl">
                         {statuses.map((s) => (
                           <SelectItem key={s} value={s}>
                             {s}
@@ -331,7 +331,7 @@ export function KeywordSidePanel({
                       <SelectTrigger className="h-9 bg-white border-[#E5E0D8] rounded-none text-xs font-mono">
                         <SelectValue />
                       </SelectTrigger>
-                      <SelectContent className="rounded-none border-[#E5E0D8] font-mono text-xs">
+                      <SelectContent className="bg-white rounded-none border-[#262626] font-mono text-xs shadow-2xl">
                         {PRIORITIES.map((p) => (
                           <SelectItem key={p} value={p}>
                             {p}
@@ -352,7 +352,7 @@ export function KeywordSidePanel({
                       <SelectTrigger className="h-9 bg-white border-[#E5E0D8] rounded-none text-xs font-mono">
                         <SelectValue />
                       </SelectTrigger>
-                      <SelectContent className="rounded-none border-[#E5E0D8] font-mono text-xs">
+                      <SelectContent className="bg-white rounded-none border-[#262626] font-mono text-xs shadow-2xl">
                         {categories.map((c) => (
                           <SelectItem key={c} value={c}>
                             {c}
@@ -374,7 +374,7 @@ export function KeywordSidePanel({
                         <SelectTrigger className="h-9 bg-white border-[#E5E0D8] rounded-none text-xs font-mono">
                           <SelectValue placeholder="Unassigned" />
                         </SelectTrigger>
-                        <SelectContent className="rounded-none border-[#E5E0D8] font-mono text-xs">
+                        <SelectContent className="bg-white rounded-none border-[#262626] font-mono text-xs shadow-2xl">
                           <SelectItem value="">Unassigned</SelectItem>
                           {users.map((u) => (
                             <SelectItem key={u} value={u}>
