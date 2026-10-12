@@ -16,6 +16,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXTAUTH_URL || "https://seo-crm-beta.vercel.app"),
   title: "Aesthetic SEO | Search Architecture & Registry",
   description: "Clinical SEO Search Registry and Keyword CRM.",
   icons: {

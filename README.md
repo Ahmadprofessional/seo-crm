@@ -111,7 +111,7 @@ GOOGLE_SHEET_ID=your-google-sheet-id-from-url
 
 # NextAuth
 NEXTAUTH_SECRET=generate-a-random-32-character-secret
-NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_URL=https://seo-crm-beta.vercel.app
 
 # App Login Credentials
 APP_USERNAME=admin
